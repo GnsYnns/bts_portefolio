@@ -418,29 +418,26 @@
                         </div>
                     </div>
 
-                    <form action="" class="contact__form grid">
+                    <form action="assets/php/traitement_formulaire.php" method="post" class="contact__form grid">
                         <div class="contact__inputs grid">
                             <div class="contact__content">
-                                <label for="" class="contact__label">Name</label>
-                                <input type="text" name="" id="" class="contact__input">
+                                <label for="nom" class="contact__label">Name</label>
+                                <input type="text" name="nom" id="nom" class="contact__input">
                             </div>
                             <div class="contact__content">
-                                <label for="" class="contact__label">Email</label>
-                                <input type="email" name="" id="" class="contact__input">
+                                <label for="email" class="contact__label">Email</label>
+                                <input type="email" name="email" id="email" class="contact__input">
                             </div>
                         </div>
                         <div class="contact__content">
-                            <label for="" class="contact__label">Message</label>
-                            <textarea class='contact__input' name="" id="" cols="0" rows="7"></textarea>
+                            <label for="message" class="contact__label">Message</label>
+                            <textarea class="contact__input" name="message" id="message" cols="0" rows="7"></textarea>
                         </div>
-
+                    
                         <div>
-                            <a href="" class="button button--flex">Envoyez un message <i class="uil uil-message button__icon"></i></a>
+                            <button type="submit" class="button button--flex">Envoyez un message <i class="uil uil-message button__icon"></i></button>
                         </div>
-
-
                     </form>
-
                 </div>
             </section>
         </main>
