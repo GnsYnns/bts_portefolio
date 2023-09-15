@@ -23,7 +23,7 @@
                         <li class="nav__item"><a href="#about" class="nav__link"><i class="uil uil-user nav__icon"></i> About</a></li>
                         <li class="nav__item"><a href="#skills" class="nav__link"><i class="uil uil-file-alt nav__icon"></i> Experience</a></li>
                         <li class="nav__item"><a href="#veille" class="nav__link"><i class="uil uil-scenery nav__icon"></i> Veille</a></li>
-                        <li class="nav__item"><a href="#projects" class="nav__link"><i class="uil uil-archive nav__icon"></i> Projets</a></li>
+                        <li class="nav__item"><a href="#project" class="nav__link"><i class="uil uil-archive nav__icon"></i> Projets</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link"><i class="uil uil-message nav__icon"></i> Contact</a></li>
                     </ul>
                     <i class="uil uil-times nav__close" id="nav-close"></i>
@@ -381,8 +381,53 @@
 
             <!--==================== PROJECT ====================-->
             <section class="project section" id="project">
-                
+                <h2 class="section__title">Mes projets</h2>
+                <span class="section__subtitle">Mes projets scolaires et professionnels</span>
+                <div class="project__container">
+                    <input class="project__radio" type="radio" name="slider" id="item-1" checked>
+                    <input class="project__radio" type="radio" name="slider" id="item-2">
+                    <input class="project__radio" type="radio" name="slider" id="item-3">
+                    <div class="project__cards">
+                      <label class="project__card" for="item-1" id="song-1">
+                        <img class="project__img" src="https://laravel.sillo.org/wp-content/uploads/2023/06/Capture-decran-2023-06-06-182437.png" alt="song">
+                      </label>
+                      <label class="project__card" for="item-2" id="song-2">
+                        <img class="project__img" src="https://learn.microsoft.com/fr-fr/dotnet/core/tutorials/media/debugging-with-visual-studio-code/run-modified-program.png" alt="song">
+                      </label>
+                      <label class="project__card" for="item-3" id="song-3">
+                        <img class="project__img" src="https://support.content.office.net/fr-fr/media/54628b72-3f3b-4dd9-9437-e3d8d201d334.png" alt="song">
+                      </label>
+                    </div>
+                    <div class="project__player">
+                        <div class="project__upper-part">
+                            <div class="project__info-area" id="test">
+                                <label class="project__song-info" id="song-info-1">
+                                    <div class="project__title">Laravel 10</div>
+                                    <div class="project__sub-line">
+                                        <div class="project__subtitle">Projet d'applications légères - BTS</div>
+                                        <div class="project__time">2022-2024</div>
+                                    </div>
+                                </label>
+                                <label class="project__song-info" id="song-info-2">
+                                    <div class="project__title">.NET</div>
+                                    <div class="project__sub-line">
+                                        <div class="project__subtitle">Projet d'applications lourdes - BTS</div>
+                                        <div class="project__time">2022-2024</div>
+                                    </div>
+                                </label>
+                                <label class="project__song-info" id="song-info-3">
+                                    <div class="project__title">POWERBI</div>
+                                    <div class="project__sub-line">
+                                        <div class="project__subtitle">Projet d'alternance</div>
+                                        <div class="project__time">2022-2024</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
+
 
             <!--==================== CONTACT ME ====================-->
             <section class="contact section" id="contact">
