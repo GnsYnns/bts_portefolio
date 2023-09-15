@@ -669,7 +669,7 @@ img {
 
 .project__cards {
   position: relative;
-  width: 80vw;
+  width: 90vw;
   height: 100%;
   margin-bottom: 20px;
 }
@@ -679,6 +679,7 @@ img {
   height: 100%;
   border-radius: 10px;
   object-fit: cover;
+  box-shadow: 3px 3px 7px 0px rgba(17,17,17,0.81);
 }
 
 /* ITEM DE GAUCHE */
@@ -687,8 +688,8 @@ img {
 #item-3:checked ~ .project__cards #song-4,
 #item-4:checked ~ .project__cards #song-5,
 #item-5:checked ~ .project__cards #song-2 {
-  transform: translatex(-20%) scale(0.8);
-  opacity: 0.6;
+  transform: translatex(-25%) scale(0.8);
+  opacity: 0.9;
   z-index: 1;
 }
 
@@ -698,8 +699,8 @@ img {
 #item-3:checked ~ .project__cards #song-1,
 #item-4:checked ~ .project__cards #song-3,
 #item-5:checked ~ .project__cards #song-4 {
-  transform: translatex(20%) scale(0.8);
-  opacity: 0.6;
+  transform: translatex(25%) scale(0.8);
+  opacity: 0.9;
   z-index: 1;
 }
 
@@ -709,7 +710,7 @@ img {
 #item-3:checked ~ .project__cards #song-5,
 #item-4:checked ~ .project__cards #song-2,
 #item-5:checked ~ .project__cards #song-1 {
-  transform: translatex(-40%) scale(0.8);
+  transform: translatex(-40%) scale(0.66);
   opacity: 0.2;
   z-index: 0;
 }
@@ -720,7 +721,7 @@ img {
 #item-3:checked ~ .project__cards #song-2,
 #item-4:checked ~ .project__cards #song-1,
 #item-5:checked ~ .project__cards #song-3 {
-  transform: translatex(40%) scale(0.8);
+  transform: translatex(40%) scale(0.66);
   opacity: 0.2;
   z-index: 0;
 }
