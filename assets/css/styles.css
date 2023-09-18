@@ -651,7 +651,7 @@ img {
   left                      : 0;
   right                     : 0;
   margin                    : auto;
-  transition                : transform 0.4s ease;
+  transition                : transform 0.6s ease;
   cursor                    : pointer;
 }
 
@@ -683,11 +683,11 @@ img {
 }
 
 /* ITEM DE GAUCHE */
-#item-1:checked ~ .project__cards #song-3,
+#item-1:checked ~ .project__cards #song-5,
 #item-2:checked ~ .project__cards #song-1,
-#item-3:checked ~ .project__cards #song-4,
-#item-4:checked ~ .project__cards #song-5,
-#item-5:checked ~ .project__cards #song-2 {
+#item-3:checked ~ .project__cards #song-2,
+#item-4:checked ~ .project__cards #song-3,
+#item-5:checked ~ .project__cards #song-4 {
   transform                 : translatex(-25%) scale(0.8);
   opacity                   : 0.9;
   z-index                   : 1;
@@ -695,10 +695,10 @@ img {
 
 /* ITEM DE DROITE */
 #item-1:checked ~ .project__cards #song-2,
-#item-2:checked ~ .project__cards #song-5,
-#item-3:checked ~ .project__cards #song-1,
-#item-4:checked ~ .project__cards #song-3,
-#item-5:checked ~ .project__cards #song-4 {
+#item-2:checked ~ .project__cards #song-3,
+#item-3:checked ~ .project__cards #song-4,
+#item-4:checked ~ .project__cards #song-5,
+#item-5:checked ~ .project__cards #song-1 {
   transform                 : translatex(25%) scale(0.8);
   opacity                   : 0.9;
   z-index                   : 1;
@@ -706,21 +706,21 @@ img {
 
 /* ITEM DE EXTREME GAUCHE */
 #item-1:checked ~ .project__cards #song-4,
-#item-2:checked ~ .project__cards #song-3,
-#item-3:checked ~ .project__cards #song-5,
+#item-2:checked ~ .project__cards #song-5,
+#item-3:checked ~ .project__cards #song-1,
 #item-4:checked ~ .project__cards #song-2,
-#item-5:checked ~ .project__cards #song-1 {
+#item-5:checked ~ .project__cards #song-3 {
   transform                 : translatex(-40%) scale(0.66);
   opacity                   : 0.2;
   z-index                   : 0;
 }
 
 /* ITEM DE EXTREME DROITE */
-#item-1:checked ~ .project__cards #song-5,
+#item-1:checked ~ .project__cards #song-3,
 #item-2:checked ~ .project__cards #song-4,
-#item-3:checked ~ .project__cards #song-2,
+#item-3:checked ~ .project__cards #song-5,
 #item-4:checked ~ .project__cards #song-1,
-#item-5:checked ~ .project__cards #song-3 {
+#item-5:checked ~ .project__cards #song-2 {
   transform                 : translatex(40%) scale(0.66);
   opacity                   : 0.2;
   z-index                   : 0;
