@@ -381,8 +381,8 @@ img {
 }
 
 .button--flex{
-  display                   : inline-flex;
-  align-items               : center;
+  display                   : inline-flex!important;
+  align-items               : center!important;
 }
 
 /* ==================== ABOUT ====================*/
