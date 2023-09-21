@@ -507,11 +507,11 @@ img {
 .skills__php{
   width                     : 75%;
 }
-.skills__cpp{
-  width                     : 10%;
+.skills__sql{
+  width                     : 60%;
 }
 .skills__csharp{
-  width                     : 60%;
+  width                     : 65%;
 }
 .skills__laravel{
   width                     : 70%;
