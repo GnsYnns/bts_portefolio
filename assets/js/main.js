@@ -34,7 +34,17 @@ navLink.forEach(n => n.addEventListener('click', linkAction));
 const skillsContent = document.getElementsByClassName('skills__content'),
   skillsHeader = document.querySelectorAll('.skills__header');
 
+function closeAllSkills() {
+  if (window.innerWidth < 568) {
+    Array.from(skillsContent).forEach(content => {
+      content.className = 'skills__content skills__close';
+    });
+  }
+}
+
 function toggleSkills() {
+  closeAllSkills(); // Ferme toutes les compétences sur mobile seulement
+
   let itemClass = this.parentNode.className;
 
   if (itemClass === 'skills__content skills__open') {
@@ -47,6 +57,10 @@ function toggleSkills() {
 skillsHeader.forEach(el => {
   el.addEventListener('click', toggleSkills);
 });
+
+// Écoutez les changements de la largeur de l'écran pour ajuster le comportement en conséquence
+window.addEventListener('resize', closeAllSkills);
+
 
 /*==================== ONGLETS D'ÉTUDES ====================*/
 const tabs = document.querySelectorAll('[data-target]'),
