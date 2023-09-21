@@ -877,6 +877,15 @@ img {
   padding                   : 0.25rem 0.5rem 0.5rem 0;
 }
 
+.contact__container--info{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+
 /* ==================== FOOTER ====================*/
 
 .footer{
