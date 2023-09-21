@@ -829,6 +829,13 @@ img {
   transform                 : translateY(-160px);
 }
 
+.project__link{
+  color                     : #fff;
+}
+
+.project__link:hover{
+  color                     : var(--main-color);
+}
 
 /* ==================== CONTACT ME ====================*/
 
