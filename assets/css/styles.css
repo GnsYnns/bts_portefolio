@@ -368,6 +368,8 @@ img {
   padding                   : 1rem!important;
   border-radius             : 0.5rem!important;
   font-weight               : var(--font-medium)!important;
+  border                    :none !important;
+  font-family               : Poppins;
 }
 
 .button:hover{
