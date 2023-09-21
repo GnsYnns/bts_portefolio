@@ -169,6 +169,7 @@ img {
 .grid {
   display                   : grid;
   gap                       : 1.5rem;
+  align-items               : center;
 }
 
 .header {
@@ -1130,11 +1131,11 @@ img {
   }
 
   .about__info{
-    justify-content         : space-between;
+    /* justify-content         : space-between; */
   }
 
   .about__buttons{
-    justify-content         : initial
+    justify-content: center;
   }
 
   .etude__tabs{
