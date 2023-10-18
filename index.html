@@ -435,29 +435,33 @@
                                                     const title = item.querySelector("title").textContent;
                                                     const link = item.querySelector("link").textContent;
                                                     const description = item.querySelector("description").textContent;
-                                                    console.log(description);
-                                                    const image = description.match(/<img[^>]+src="([^">]+)"/)[1];
 
+                                                    // Créez un conteneur temporaire pour analyser le contenu HTML de la description
+                                                    const tempContainer = document.createElement("div");
+                                                    tempContainer.innerHTML = description;
+
+                                                    // Maintenant, recherchez l'image dans le contenu HTML
+                                                    const imagesElement = tempContainer.querySelector("img");
+                                                    let imageUrl = "";
+                                                    if (imagesElement) {
+                                                        imageUrl = imagesElement.getAttribute("src");
+                                                    }
+
+                                                    // Maintenant, vous pouvez utiliser imageUrl pour afficher l'image, par exemple :
+                                                    const imageElement = document.createElement("img");
+                                                    imageElement.src = imageUrl;
+
+                                                    // Créer une classe pour le 5ème lien
                                                     const listItem = document.createElement("li");
                                                     const linkElement = document.createElement("a");
                                                     linkElement.textContent = title;
                                                     linkElement.href = link;
                                                     listItem.appendChild(linkElement);
-
-                                                    // Ajouter une classe aux 5 derniers éléments
-                                                    if (index >= last5Items.length - 5) {
-                                                        listItem.classList.add("veille__link");
+                                                    if (index === 4) {
+                                                        listItem.classList.add("cinquieme-lien");
                                                     }
-
-                                                    // Ajouter l'image associée
-                                                    if (image) {
-                                                        const imgElement = document.createElement("img");
-                                                        imgElement.src = image;
-                                                        listItem.appendChild(imgElement);
-                                                    }
-
+                                                    listItem.appendChild(imageElement);
                                                     rssList.appendChild(listItem);
-                                                });
                                             })
                                             .catch(error => {
                                                 console.error("Une erreur s'est produite : " + error);
