@@ -417,7 +417,7 @@
                             <div class="veille__info">
                                 <p class="veille__description">
                                     <ul id="rss-list"></ul>
-                                        <script>
+                                    <script>
                                         const rssUrl = "https://cors-anywhere.herokuapp.com/https://dotnet.developpez.com/index/rss";
                                         const rssList = document.getElementById("rss-list");
 
@@ -445,7 +445,7 @@
 
                                                     // Ajouter une classe aux 5 derniers éléments
                                                     if (index >= last5Items.length - 5) {
-                                                        listItem.classList.add("recent");
+                                                        listItem.classList.add("veille__link");
                                                     }
 
                                                     // Ajouter l'image associée
