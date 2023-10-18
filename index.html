@@ -417,33 +417,51 @@
                             <div class="veille__info">
                                 <p class="veille__description">
                                     <ul id="rss-list"></ul>
-                                        <script>
-                                            const rssUrl = "https://cors-anywhere.herokuapp.com/https://dotnet.developpez.com/index/rss";
-                                            const rssList = document.getElementById("rss-list");
-
-                                            fetch(rssUrl)
-                                                .then(response => response.text())
-                                                .then(data => {
-                                                    const parser = new DOMParser();
-                                                    const xmlDoc = parser.parseFromString(data, "text/xml");
-                                                    const items = xmlDoc.querySelectorAll("item");
-
-                                                    items.forEach(item => {
-                                                        const title = item.querySelector("title").textContent;
-                                                        const link = item.querySelector("link").textContent;
-
-                                                        const listItem = document.createElement("li");
-                                                        const linkElement = document.createElement("a");
-                                                        linkElement.textContent = title;
-                                                        linkElement.href = link;
-                                                        listItem.appendChild(linkElement);
-                                                        rssList.appendChild(listItem);
-                                                    });
-                                                })
-                                                .catch(error => {
-                                                    console.error("Une erreur s'est produite : " + error);
+                                    <script>
+                                        const rssUrl = "https://cors-anywhere.herokuapp.com/https://dotnet.developpez.com/index/rss";
+                                        const rssList = document.getElementById("rss-list");
+                                    
+                                        fetch(rssUrl)
+                                            .then(response => response.text())
+                                            .then(data => {
+                                                const parser = new DOMParser();
+                                                const xmlDoc = parser.parseFromString(data, "text/xml");
+                                                const items = xmlDoc.querySelectorAll("item");
+                                    
+                                                // Sélectionner les 5 derniers éléments
+                                                const last5Items = Array.from(items).slice(-5);
+                                    
+                                                last5Items.forEach((item, index) => {
+                                                    const title = item.querySelector("title").textContent;
+                                                    const link = item.querySelector("link").textContent;
+                                                    const description = item.querySelector("description").textContent;
+                                                    const image = description.match(/<img[^>]+src="([^">]+)"/)[1];
+                                    
+                                                    const listItem = document.createElement("li");
+                                                    const linkElement = document.createElement("a");
+                                                    linkElement.textContent = title;
+                                                    linkElement.href = link;
+                                                    listItem.appendChild(linkElement);
+                                    
+                                                    // Ajouter une classe aux 5 derniers éléments
+                                                    if (index >= last5Items.length - 5) {
+                                                        listItem.classList.add("veille__link");
+                                                    }
+                                    
+                                                    // Ajouter l'image associée
+                                                    if (image) {
+                                                        const imgElement = document.createElement("img");
+                                                        imgElement.src = image;
+                                                        listItem.appendChild(imgElement);
+                                                    }
+                                    
+                                                    rssList.appendChild(listItem);
                                                 });
-                                        </script>
+                                            })
+                                            .catch(error => {
+                                                console.error("Une erreur s'est produite : " + error);
+                                            });
+                                    </script>
                                 </p>
                             </div>
                             <div class="veille__buttons">
