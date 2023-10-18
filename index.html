@@ -416,52 +416,50 @@
                         <div class="veille__data">
                             <div class="veille__info">
                                 <p class="veille__description">
-                                    <ul id="rss-list"></ul>
-                                        <script>
-                                            const rssUrl = "https://dotnet.developpez.com/index/rss";
-                                            const rssList = document.getElementById("rss-list");
-
-                                            fetch(rssUrl)
-                                                .then(response => response.text())
-                                                .then(data => {
-                                                    const parser = new DOMParser();
-                                                    const xmlDoc = parser.parseFromString(data, "text/xml");
-                                                    const items = xmlDoc.querySelectorAll("item");
-
-                                                    // Sélectionner les 5 derniers éléments
-                                                    const last5Items = Array.from(items).slice(-5);
-
-                                                    last5Items.forEach((item, index) => {
-                                                        const title = item.querySelector("title").textContent;
-                                                        const link = item.querySelector("link").textContent;
-                                                        const description = item.querySelector("description").textContent;
-                                                        const image = description.match(/<img[^>]+src="([^">]+)"/)[1];
-
-                                                        const listItem = document.createElement("li");
-                                                        const linkElement = document.createElement("a");
-                                                        linkElement.textContent = title;
-                                                        linkElement.href = link;
-                                                        listItem.appendChild(linkElement);
-
-                                                        // Ajouter une classe aux 5 derniers éléments
-                                                        if (index >= last5Items.length - 5) {
-                                                            listItem.classList.add("recent");
-                                                        }
-
-                                                        // Ajouter l'image associée
-                                                        if (image) {
-                                                            const imgElement = document.createElement("img");
-                                                            imgElement.src = image;
-                                                            listItem.appendChild(imgElement);
-                                                        }
-
-                                                        rssList.appendChild(listItem);
-                                                    });
-                                                })
-                                                .catch(error => {
-                                                    console.error("Une erreur s'est produite : " + error);
-                                                });
-                                        </script>
+                                    <div id="rss-feed">
+                                        <!-- Les entrées RSS seront affichées ici -->
+                                      </div>
+                                    
+                                      <script>
+                                        // URL du flux RSS
+                                        var rssFeedUrl = 'https://dotnet.developpez.com/index/rss';
+                                    
+                                        // Nombre d'articles à afficher
+                                        var numArticles = 5;
+                                    
+                                        // Fonction pour récupérer et afficher les données du flux RSS
+                                        function fetchRssFeed() {
+                                          fetch(rssFeedUrl)
+                                            .then(response => response.text())
+                                            .then(data => {
+                                              var parser = new DOMParser();
+                                              var xmlDoc = parser.parseFromString(data, 'text/xml');
+                                              var items = xmlDoc.querySelectorAll('item');
+                                    
+                                              var rssFeedDiv = document.getElementById('rss-feed');
+                                    
+                                              for (var i = 0; i < numArticles; i++) {
+                                                var item = items[i];
+                                                var title = item.querySelector('title').textContent;
+                                                var description = item.querySelector('description').textContent;
+                                                var link = item.querySelector('link').textContent;
+                                    
+                                                var articleDiv = document.createElement('div');
+                                                articleDiv.innerHTML = `
+                                                  <h2><a href="${link}" target="_blank">${title}</a></h2>
+                                                  <p>${description}</p>
+                                                `;
+                                                rssFeedDiv.appendChild(articleDiv);
+                                              }
+                                            })
+                                            .catch(error => {
+                                              console.error('Une erreur s\'est produite :', error);
+                                            });
+                                        }
+                                    
+                                        // Appeler la fonction pour récupérer le flux RSS
+                                        fetchRssFeed();
+                                      </script>
 
                                 </p>
                             </div>
