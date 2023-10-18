@@ -528,7 +528,15 @@ img {
 .skills__react {
   width: 10%;
 }
-
+.skills__powerbi {
+  width: 40%;
+}
+.skills__word {
+  width: 80%;
+}
+.skills__excel {
+  width: 70%;
+}
 .skills__SCSS {
   width: 10%;
 }
