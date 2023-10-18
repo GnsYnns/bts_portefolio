@@ -14,7 +14,7 @@ function fetchRssFeed() {
       var xmlDoc = parser.parseFromString(data, "text/xml");
       var items = xmlDoc.querySelectorAll("item");
 
-      var rssFeedDiv = document.getElementById("rss-feed");
+      var rssFeedDiv = document.getElementById("rss-feed-net");
 
       for (var i = 0; i < numArticles; i++) {
         var item = items[i];
@@ -24,9 +24,9 @@ function fetchRssFeed() {
 
         var articleDiv = document.createElement("div");
         articleDiv.innerHTML = `
-            <h2><a href="${link}" target="_blank">${title}</a></h2>
-            <p>${description}</p>
-        `;
+                    <h2><a href="${link}" target="_blank">${title}</a></h2>
+                    <p>${description}</p>
+                `;
         rssFeedDiv.appendChild(articleDiv);
       }
     })
