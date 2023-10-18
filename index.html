@@ -20,12 +20,12 @@
                 <a href="#" class="nav__logo">Yannis</a>
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list grid">
-                        <li class="nav__item"><a href="#home" class="nav__link active-link"><i class="uil uil-estate nav__icon"></i> Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link"><i class="uil uil-user nav__icon"></i> About</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link"><i class="uil uil-file-alt nav__icon"></i> Compétences</a></li>
-                        <li class="nav__item"><a href="#veille" class="nav__link"><i class="uil uil-scenery nav__icon"></i> Veille</a></li>
-                        <li class="nav__item"><a href="#project" class="nav__link"><i class="uil uil-archive nav__icon"></i> Projets</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link"><i class="uil uil-message nav__icon"></i> Contact</a></li>
+                        <li class="nav__item"><a href="#home" class="nav__link active-link"><i class="uil uil-estate nav__icon"></i>Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link"><i class="uil uil-user nav__icon"></i>About</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link"><i class="uil uil-file-alt nav__icon"></i>Compétences</a></li>
+                        <li class="nav__item"><a href="#veille" class="nav__link"><i class="uil uil-scenery nav__icon"></i>Veille</a></li>
+                        <li class="nav__item"><a href="#project" class="nav__link"><i class="uil uil-archive nav__icon"></i>Projets</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link"><i class="uil uil-message nav__icon"></i>Contact</a></li>
                     </ul>
                     <i class="uil uil-times nav__close" id="nav-close"></i>
                 </div>
@@ -416,9 +416,34 @@
                         <div class="veille__data">
                             <div class="veille__info">
                                 <p class="veille__description">
-                                    L'informatique neuromorphique est un sous-domaine de l'ingénierie 
-                                    neuromorphique qui tente essentiellement de reproduire les systèmes 
-                                    de pensée et de traitement humains.
+                                    <ul id="rss-list"></ul>
+                                        <script>
+                                            const rssUrl = "https://dotnet.developpez.com/index/rss";
+                                            const rssList = document.getElementById("rss-list");
+
+                                            fetch(rssUrl)
+                                                .then(response => response.text())
+                                                .then(data => {
+                                                    const parser = new DOMParser();
+                                                    const xmlDoc = parser.parseFromString(data, "text/xml");
+                                                    const items = xmlDoc.querySelectorAll("item");
+
+                                                    items.forEach(item => {
+                                                        const title = item.querySelector("title").textContent;
+                                                        const link = item.querySelector("link").textContent;
+
+                                                        const listItem = document.createElement("li");
+                                                        const linkElement = document.createElement("a");
+                                                        linkElement.textContent = title;
+                                                        linkElement.href = link;
+                                                        listItem.appendChild(linkElement);
+                                                        rssList.appendChild(listItem);
+                                                    });
+                                                })
+                                                .catch(error => {
+                                                    console.error("Une erreur s'est produite : " + error);
+                                                });
+                                        </script>
                                 </p>
                             </div>
                             <div class="veille__buttons">
