@@ -23,9 +23,9 @@ function fetchRssFeed() {
         var link = item.querySelector("link").textContent;
 
         var articleDiv = document.createElement("div");
+        articleDiv.classList.add("veille_link-container");
         articleDiv.innerHTML = `
                     <a class="veille__link" href="${link}" target="_blank">${title}</a>
-                    <p>${description}</p>
                 `;
         rssFeedDiv.appendChild(articleDiv);
       }
