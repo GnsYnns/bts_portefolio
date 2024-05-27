@@ -52,6 +52,12 @@
                 ><i class="uil uil-message nav__icon"></i>Contact</a
               >
             </li>
+
+            <li class="nav__item">
+              <a href="admin.html" class="nav__link"
+                ><i class="uil uil-message nav__icon"></i>Admin</a
+              >
+            </li>
           </ul>
           <i class="uil uil-times nav__close" id="nav-close"></i>
         </div>
@@ -746,10 +752,12 @@
             </div>
           </div>
 
+          <!-- AJOUT DE L'ID Formulaire pour faire le test avant execution-->
           <form
             action="https://formspree.io/f/maygpdje"
             method="post"
             class="contact__form grid"
+            id="Formulaire"
           >
             <div class="contact__inputs grid">
               <div class="contact__content">
@@ -841,5 +849,8 @@
 
     <!--==================== MAIN JS ====================-->
     <script src="assets/js/main.js"></script>
+
+    <!--==================== JS Message ====================-->
+    <script src="assets/js/verification.js"></script>
   </body>
 </html>

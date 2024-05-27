@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Page de Connexion</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Connexion</h2>
+    <form action="assets/php/login.php" method="post">
+        <div class="input-container">
+            <label for="id">ID Utilisateur</label>
+            <input type="text" id="id" name="id" required>
+        </div>
+        <div class="input-container">
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Se connecter</button>
+    </form>
+</div>
+
+</body>
+</html>
