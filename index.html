@@ -38,11 +38,6 @@
               >
             </li>
             <li class="nav__item">
-              <a href="#veille" class="nav__link"
-                ><i class="uil uil-scenery nav__icon"></i>Veille</a
-              >
-            </li>
-            <li class="nav__item">
               <a href="#project" class="nav__link"
                 ><i class="uil uil-archive nav__icon"></i>Projets</a
               >
@@ -50,12 +45,6 @@
             <li class="nav__item">
               <a href="#contact" class="nav__link"
                 ><i class="uil uil-message nav__icon"></i>Contact</a
-              >
-            </li>
-
-            <li class="nav__item">
-              <a href="admin.html" class="nav__link"
-                ><i class="uil uil-message nav__icon"></i>Admin</a
               >
             </li>
           </ul>
@@ -545,39 +534,6 @@
         </div>
       </section>
 
-      <!--==================== VEILLE ====================-->
-      <section class="veille section" id="veille">
-        <h2 class="section__title">Veille Technologique</h2>
-        <span class="section__subtitle"
-          >Toute les nouvelles sur le framework .NET <br />et le framework
-          Laravel</span
-        >
-        <div class="veille__container container grid">
-          <div class="veille__data">
-            <div class="veille__info">
-              <div class="veille__description">
-                <h2 class="veille__title-description">
-                  Nouvelles sur le framework .NET
-                </h2>
-                <div id="rss-feed-net">
-                  <!-- Les entrées RSS seront affichées ici -->
-                </div>
-                <script src="assets/js/veille-net.js"></script>
-              </div>
-              <div class="veille__description">
-                <h2 class="veille__title-description">
-                  Nouvelles sur le framework Laravel
-                </h2>
-                <div id="rss-feed-laravel">
-                  <!-- Les entrées RSS seront affichées ici -->
-                </div>
-                <script src="assets/js/veille-laravel.js"></script>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!--==================== PROJECT ====================-->
       <section class="project section" id="project">
         <h2 class="section__title">Mes projets</h2>
@@ -756,9 +712,7 @@
           <form
             action="https://formspree.io/f/maygpdje"
             method="post"
-            class="contact__form grid"
-            id="Formulaire"
-          >
+            class="contact__form grid">
             <div class="contact__inputs grid">
               <div class="contact__content">
                 <label for="name" class="contact__label">Nom</label>
@@ -812,7 +766,6 @@
             <li><a href="#home" class="footer__link">Home</a></li>
             <li><a href="#about" class="footer__link">About</a></li>
             <li><a href="#skills" class="footer__link">Compétences</a></li>
-            <li><a href="#veille" class="footer__link">Veille</a></li>
             <li><a href="#project" class="footer__link">Projets</a></li>
             <li><a href="#contact" class="footer__link">Contact</a></li>
           </ul>
@@ -850,7 +803,5 @@
     <!--==================== MAIN JS ====================-->
     <script src="assets/js/main.js"></script>
 
-    <!--==================== JS Message ====================-->
-    <script src="assets/js/verification.js"></script>
   </body>
 </html>
